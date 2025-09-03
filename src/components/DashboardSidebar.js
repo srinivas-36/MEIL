@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Building2, Users, Package, ClipboardList, LogOut, User, ShieldCheck, ChevronUp, ChevronDown, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function DashboardSidebar() {
     const pathname = usePathname();
@@ -17,14 +18,17 @@ export default function DashboardSidebar() {
     const navRef = useRef(null);
     const router = useRouter()
     useEffect(() => {
-        const loggedIn = localStorage.getItem("isLoggedIn") === "true";
-        setIsLoggedIn(loggedIn);
+        if (typeof window !== "undefined") {
+            const loggedIn = localStorage.getItem("isLoggedIn") === "true";
+            setIsLoggedIn(loggedIn);
 
-        if (loggedIn) {
-            const name = localStorage.getItem("userName") || "Admin";
-            setUserName(name);
+            if (loggedIn) {
+                const name = localStorage.getItem("userName") || "Admin";
+                setUserName(name);
+            }
         }
     }, []);
+
 
     useEffect(() => {
         const checkScroll = () => {
@@ -106,11 +110,14 @@ export default function DashboardSidebar() {
                             <X size={20} />
                         </button>
                     </div>
-                    <img
+                    <Image
                         src="https://meil.in/sites/default/files/meil_logo_old_update_24.png"
-                        className="bg-white w-3/4 mx-6 mb-6 p-3 rounded-md shadow-md transform transition-all hover:scale-105"
-                        alt="MEIL Logo"
+                        alt="MEIL Logo"    // ✅ add this
+                        className="bg-amber-50 w-3/4 mx-6 p-3 rounded-md"
+                        width={800}
+                        height={500}
                     />
+
 
                 </div>
 
