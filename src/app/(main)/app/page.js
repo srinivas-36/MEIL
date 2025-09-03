@@ -24,11 +24,11 @@ export default function Home() {
   // }, []);
 
   const handleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("userName");
-      window.location.href = "/login";
-    }
+    // if (typeof window !== "undefined") {
+    //   localStorage.removeItem("isLoggedIn");
+    //   localStorage.removeItem("userName");
+    // }
+    window.location.href = "/login";
   };
 
   // Sample data for demonstration
@@ -177,7 +177,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Welcome back, {userName}!</h2>
+          {/* <h2 className="text-2xl font-bold text-gray-800 mb-2">Welcome back, {userName}!</h2> */}
           <p className="text-gray-600">Manage your materials and streamline procurement processes</p>
         </div>
 
