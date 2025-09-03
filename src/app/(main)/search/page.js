@@ -1,8 +1,8 @@
 // SearchPage.js - Enhanced with search functionality and better UI
 "use client";
 import { useState, useEffect } from "react";
-import MaterialTable from "../../components/MaterialTable";
-import AttributeFilter from "../../components/AttributeFilter";
+import MaterialTable from "@/components/MaterialTable";
+import AttributeFilter from "@/components/AttributeFilter";
 import { Search, Filter, Download, Upload } from "lucide-react";
 
 export default function SearchPage() {
