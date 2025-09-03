@@ -189,7 +189,7 @@ export default function Login() {
                                         Signing in...
                                     </>
                                 ) : (
-                                    Sign in
+                                    'Sign in'
                                 )}
                             </button>
                         </div>
