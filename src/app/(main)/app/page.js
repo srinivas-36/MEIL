@@ -264,7 +264,7 @@ export default function Home() {
                   ) : (
                     <div>
                       <h3 className="font-medium text-red-700 mb-2">Material Not Found</h3>
-                      <p className="text-gray-700 mb-3">No material found with number "{searchByNumber}"</p>
+                      <p className="text-gray-700 mb-3">No material found with number {searchByNumber}</p>
                       <div className="flex space-x-2">
                         <button
                           onClick={() => {
