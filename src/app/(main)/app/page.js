@@ -13,15 +13,15 @@ export default function Home() {
   const [showNewGroupModal, setShowNewGroupModal] = useState(false);
   const [newMaterialComment, setNewMaterialComment] = useState("");
   const [newGroupComment, setNewGroupComment] = useState("");
-  const [userName, setUserName] = useState("");
+  // const [userName, setUserName] = useState("");
   const [activeTab, setActiveTab] = useState("materials");
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const name = localStorage.getItem("userName") || "User";
-      setUserName(name);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const name = localStorage.getItem("userName") || "User";
+  //     setUserName(name);
+  //   }
+  // }, []);
 
   const handleLogout = () => {
     if (typeof window !== "undefined") {
@@ -160,7 +160,7 @@ export default function Home() {
                 <div className="w-8 h-8 bg-gradient-to-r from-[#002147] to-[#7F56D9] rounded-full flex items-center justify-center">
                   <User size={16} className="text-white" />
                 </div>
-                <span className="text-sm font-medium text-gray-700">{userName}</span>
+                {/* <span className="text-sm font-medium text-gray-700">{userName}</span> */}
               </button>
 
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -264,7 +264,7 @@ export default function Home() {
                   ) : (
                     <div>
                       <h3 className="font-medium text-red-700 mb-2">Material Not Found</h3>
-                      <p className="text-gray-700 mb-3">No material found with number {searchByNumber}</p>
+                      <p className="text-gray-700 mb-3">No material found with number "{searchByNumber}"</p>
                       <div className="flex space-x-2">
                         <button
                           onClick={() => {
