@@ -17,15 +17,18 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("materials");
 
   useEffect(() => {
-    // Get user info from localStorage
-    const name = localStorage.getItem("userName") || "User";
-    setUserName(name);
+    if (typeof window !== "undefined") {
+      const name = localStorage.getItem("userName") || "User";
+      setUserName(name);
+    }
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userName");
-    window.location.href = "/login";
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("userName");
+      window.location.href = "/login";
+    }
   };
 
   // Sample data for demonstration
@@ -261,7 +264,7 @@ export default function Home() {
                   ) : (
                     <div>
                       <h3 className="font-medium text-red-700 mb-2">Material Not Found</h3>
-                      <p className="text-gray-700 mb-3">No material found with number {searchByNumber}</p>
+                      <p className="text-gray-700 mb-3">No material found with number "{searchByNumber}"</p>
                       <div className="flex space-x-2">
                         <button
                           onClick={() => {
