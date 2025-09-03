@@ -16,18 +16,10 @@ export default function Home() {
   // const [userName, setUserName] = useState("");
   const [activeTab, setActiveTab] = useState("materials");
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const name = localStorage.getItem("userName") || "User";
-  //     setUserName(name);
-  //   }
-  // }, []);
+
 
   const handleLogout = () => {
-    // if (typeof window !== "undefined") {
-    //   localStorage.removeItem("isLoggedIn");
-    //   localStorage.removeItem("userName");
-    // }
+  
     window.location.href = "/login";
   };
 
