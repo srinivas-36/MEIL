@@ -50,7 +50,8 @@ export default function Sidebar() {
                 {/* <h1 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-[#7F56D9] to-[#EC4899] bg-clip-text text-transparent">
                     MDM Portal
                 </h1> */}
-                <img src="https://meil.in/sites/default/files/meil_logo_old_update_24.png" className="bg-amber-50 w-3/4 mx-6 p-3 rounded-md" />
+                <Image src="https://meil.in/sites/default/files/meil_logo_old_update_24.png" className="bg-amber-50 w-3/4 mx-6 p-3 rounded-md" width={800}
+                    height={500} />
             </div>
 
             {/* User Status */}
