@@ -30,7 +30,7 @@ export default function Sidebar() {
         setIsLoggedIn(false);
         setUserName("");
         // In a real app, you would also clear tokens and redirect
-        router.push("/login");
+        router.push("/");
     };
     const navItems = [
         { name: "Home", href: "/app", icon: Home },

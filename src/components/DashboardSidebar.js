@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Building2, Users, Package, ClipboardList, LogOut, User, ShieldCheck, ChevronUp, ChevronDown, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function DashboardSidebar() {
     const pathname = usePathname();
@@ -14,7 +15,7 @@ export default function DashboardSidebar() {
     const [showScrollBottom, setShowScrollBottom] = useState(false);
     const [activeHover, setActiveHover] = useState(null);
     const navRef = useRef(null);
-
+    const router = useRouter()
     useEffect(() => {
         const loggedIn = localStorage.getItem("isLoggedIn") === "true";
         setIsLoggedIn(loggedIn);
@@ -52,6 +53,8 @@ export default function DashboardSidebar() {
         localStorage.removeItem("userName");
         setIsLoggedIn(false);
         setUserName("");
+        router.push("/")
+
     };
 
     const scrollToTop = () => {
